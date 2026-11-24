@@ -7,3 +7,5 @@ dist/
 *.xapk
 .deploy/
 .claude/
+# cau_truc.md chi giu tren may: repo cong khai, khong lo ten / duong dan ca nhan.
+cau_truc.md

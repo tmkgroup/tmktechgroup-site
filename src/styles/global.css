@@ -44,8 +44,11 @@ body {
   font-size: 1.0625rem;
   line-height: 1.6;
 }
-a {
-  color: inherit;
+/* Trong @layer base de class Tailwind (text-white...) thang duoc; de ngoai layer thi luat nay de chu nut thanh mau chu thuong. */
+@layer base {
+  a {
+    color: inherit;
+  }
 }
 :focus-visible {
   outline: 2px solid var(--accent);
