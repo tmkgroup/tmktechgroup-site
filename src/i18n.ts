@@ -1,4 +1,4 @@
-// Noi dung chu cua site.
+// Noi dung chu cua site. Truong icon = ten file public/icons/<icon>.png (Codex gen, 2026-11-24).
 // Nguon: TMK_Tech_Group_Brand_Profile.md (ho so thuong hieu anh dua 2026-11-24)
 // va anh chup ChatGPT "Can website chinh thuc" (ten 8 linh vuc, "Technology across multiple industries",
 // "Let's Build the Future Together", email lien he). Cam them cau khong co trong 2 nguon tren.
@@ -6,14 +6,14 @@
 export type Lang = 'en';
 
 export const industries = [
-  { icon: 'monitor-smartphone', name: 'Software & Mobile Applications' },
-  { icon: 'gamepad-2', name: 'Game & Interactive Entertainment' },
-  { icon: 'brain-circuit', name: 'Artificial Intelligence' },
-  { icon: 'building', name: 'Enterprise Solutions' },
-  { icon: 'graduation-cap', name: 'Education Technology' },
-  { icon: 'shield-check', name: 'Cybersecurity & Data Technology' },
-  { icon: 'clapperboard', name: 'Digital Media & Services' },
-  { icon: 'map', name: 'Geospatial Technology' },
+  { icon: 'software-mobile', name: 'Software & Mobile Applications' },
+  { icon: 'game', name: 'Game & Interactive Entertainment' },
+  { icon: 'ai', name: 'Artificial Intelligence' },
+  { icon: 'enterprise', name: 'Enterprise Solutions' },
+  { icon: 'edtech', name: 'Education Technology' },
+  { icon: 'cybersecurity-data', name: 'Cybersecurity & Data Technology' },
+  { icon: 'digital-media', name: 'Digital Media & Services' },
+  { icon: 'geospatial', name: 'Geospatial Technology' },
 ] as const;
 
 export const contactEmail = 'contact@tmktechgroup.com';
@@ -49,13 +49,13 @@ const en = {
   values: {
     title: 'Core values',
     items: [
-      ['Innovation', 'Continuously explore, learn, and improve to create new value.'],
-      ['Quality', 'Prioritize reliability, performance, and user experience in every product.'],
-      ['Integrity', 'Act with transparency, accountability, and integrity.'],
-      ['User Focus', 'Put real user needs and interests at the center of our decisions.'],
-      ['Security & Privacy', 'Prioritize information security and privacy from the design stage.'],
-      ['Global Mindset', 'Embrace diversity and strive for worldwide accessibility.'],
-      ['Sustainable Growth', 'Pursue lasting value and continuous improvement.'],
+      ['Innovation', 'Continuously explore, learn, and improve to create new value.', 'innovation'],
+      ['Quality', 'Prioritize reliability, performance, and user experience in every product.', 'quality'],
+      ['Integrity', 'Act with transparency, accountability, and integrity.', 'integrity'],
+      ['User Focus', 'Put real user needs and interests at the center of our decisions.', 'user-focus'],
+      ['Security & Privacy', 'Prioritize information security and privacy from the design stage.', 'security-privacy'],
+      ['Global Mindset', 'Embrace diversity and strive for worldwide accessibility.', 'global-mindset'],
+      ['Sustainable Growth', 'Pursue lasting value and continuous improvement.', 'sustainable-growth'],
     ],
   },
   industriesSection: { title: 'Our Industries', sub: 'Technology across multiple industries' },

@@ -1,16 +1,5 @@
 ---
 import '../styles/global.css';
-import MonitorSmartphone from '@lucide/astro/icons/monitor-smartphone';
-import Gamepad2 from '@lucide/astro/icons/gamepad-2';
-import BrainCircuit from '@lucide/astro/icons/brain-circuit';
-import Building from '@lucide/astro/icons/building';
-import GraduationCap from '@lucide/astro/icons/graduation-cap';
-import ShieldCheck from '@lucide/astro/icons/shield-check';
-import Clapperboard from '@lucide/astro/icons/clapperboard';
-import MapIcon from '@lucide/astro/icons/map';
-import Sun from '@lucide/astro/icons/sun';
-import Moon from '@lucide/astro/icons/moon';
-import Mail from '@lucide/astro/icons/mail';
 import { t, industries, contactEmail, privacyUrl, type Lang } from '../i18n';
 
 interface Props {
@@ -18,16 +7,8 @@ interface Props {
 }
 const { lang } = Astro.props;
 const c = t[lang];
-const icons = {
-  'monitor-smartphone': MonitorSmartphone,
-  'gamepad-2': Gamepad2,
-  'brain-circuit': BrainCircuit,
-  building: Building,
-  'graduation-cap': GraduationCap,
-  'shield-check': ShieldCheck,
-  clapperboard: Clapperboard,
-  map: MapIcon,
-};
+// Icon = hinh Codex gen (public/icons/), anh 2026-11-24: "toan bo luon".
+const ic = (n: string) => `/icons/${n}.png`;
 const site = 'https://tmktechgroup.com';
 const canonical = `${site}/`;
 ---
@@ -66,8 +47,8 @@ const canonical = `${site}/`;
         <a href="#contact" class="hidden no-underline hover:underline sm:inline">{c.nav.contact}</a>
         <button id="theme" type="button" aria-label={c.themeLabel} title={c.themeLabel}
           class="grid size-9 cursor-pointer place-items-center rounded-full border border-[var(--line)] bg-transparent text-[var(--ink)]">
-          <Sun class="theme-sun" size={18} aria-hidden="true" />
-          <Moon class="theme-moon" size={18} aria-hidden="true" />
+          <img src={ic('sun')} alt="" width="18" height="18" class="theme-sun size-[18px]" />
+          <img src={ic('moon')} alt="" width="18" height="18" class="theme-moon size-[18px]" />
         </button>
       </nav>
     </header>
@@ -84,16 +65,19 @@ const canonical = `${site}/`;
       <div class="band" aria-label={c.industriesSection.title}>
         <div class="band-track">
           <ul>
-            {industries.map((i) => { const I = icons[i.icon]; return <li><I size={22} aria-hidden="true" />{i.name}</li>; })}
+            {industries.map((i) => <li><img src={ic(i.icon)} alt="" width="32" height="32" class="size-8" />{i.name}</li>)}
           </ul>
           <ul aria-hidden="true">
-            {industries.map((i) => { const I = icons[i.icon]; return <li><I size={22} aria-hidden="true" />{i.name}</li>; })}
+            {industries.map((i) => <li><img src={ic(i.icon)} alt="" width="32" height="32" class="size-8" />{i.name}</li>)}
           </ul>
         </div>
       </div>
 
       <section id="about" class="wrap grid gap-8 border-b border-[var(--line)] py-20 md:grid-cols-[1fr_2fr]">
-        <h2 class="m-0 text-3xl font-semibold leading-tight tracking-tight">{c.about.title}</h2>
+        <div>
+          <img src={ic('about')} alt="" width="56" height="56" class="mb-5 size-14" />
+          <h2 class="m-0 text-3xl font-semibold leading-tight tracking-tight">{c.about.title}</h2>
+        </div>
         <div class="measure">
           {c.about.body.map((p) => <p class="mt-0 mb-5">{p}</p>)}
         </div>
@@ -101,10 +85,12 @@ const canonical = `${site}/`;
 
       <section class="wrap grid gap-12 border-b border-[var(--line)] py-20 md:grid-cols-2">
         <div>
+          <img src={ic('vision')} alt="" width="48" height="48" class="mb-4 size-12" />
           <h2 class="m-0 text-base font-semibold text-[var(--accent)]">{c.vision.title}</h2>
           <p class="mt-4 mb-0 text-[clamp(1.3rem,2.2vw,1.7rem)] leading-snug">{c.vision.body}</p>
         </div>
         <div>
+          <img src={ic('mission')} alt="" width="48" height="48" class="mb-4 size-12" />
           <h2 class="m-0 text-base font-semibold text-[var(--accent)]">{c.mission.title}</h2>
           <p class="mt-4 mb-0 text-[clamp(1.3rem,2.2vw,1.7rem)] leading-snug">{c.mission.body}</p>
         </div>
@@ -113,9 +99,9 @@ const canonical = `${site}/`;
       <section class="wrap grid gap-8 border-b border-[var(--line)] py-20 md:grid-cols-[1fr_2fr]">
         <h2 class="m-0 text-3xl font-semibold leading-tight tracking-tight">{c.values.title}</h2>
         <dl class="m-0 grid gap-x-10 gap-y-7 sm:grid-cols-2">
-          {c.values.items.map(([k, v]) => (
+          {c.values.items.map(([k, v, i]) => (
             <div class="border-t-2 border-[var(--accent)] pt-3">
-              <dt class="font-semibold">{k}</dt>
+              <dt class="flex items-center gap-3 font-semibold"><img src={ic(i)} alt="" width="40" height="40" class="size-10 shrink-0" />{k}</dt>
               <dd class="m-0 mt-1 text-[var(--muted)]">{v}</dd>
             </div>
           ))}
@@ -128,23 +114,21 @@ const canonical = `${site}/`;
           {c.industriesSection.sub && <p class="mt-3 mb-0 text-[var(--muted)]">{c.industriesSection.sub}</p>}
         </div>
         <ul class="m-0 grid list-none gap-x-10 p-0 sm:grid-cols-2">
-          {industries.map((i) => {
-            const I = icons[i.icon];
-            return (
-              <li class="flex items-center gap-4 border-b border-[var(--line)] py-4 font-semibold">
-                <I size={24} class="shrink-0 text-[var(--accent)]" aria-hidden="true" />
-                {i.name}
-              </li>
-            );
-          })}
+          {industries.map((i) => (
+            <li class="flex items-center gap-4 border-b border-[var(--line)] py-4 font-semibold">
+              <img src={ic(i.icon)} alt="" width="40" height="40" class="size-10 shrink-0" />
+              {i.name}
+            </li>
+          ))}
         </ul>
       </section>
 
       <section id="contact" class="wrap py-24">
+        <img src={ic('contact')} alt="" width="64" height="64" class="mb-6 size-16" />
         <h2 class="m-0 max-w-[16ch] text-[clamp(2.2rem,5vw,4rem)] font-semibold leading-[1.02] tracking-[-0.03em]">{c.contact.title}</h2>
         <a href={`mailto:${contactEmail}`}
           class="mt-8 inline-flex items-center gap-3 rounded-full bg-[#1463ff] px-6 py-3 font-semibold text-white no-underline hover:opacity-90">
-          <Mail size={20} aria-hidden="true" />{contactEmail}
+          <img src={ic('mail')} alt="" width="20" height="20" class="size-5" />{contactEmail}
         </a>
       </section>
     </main>
