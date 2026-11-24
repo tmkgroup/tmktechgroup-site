@@ -6,6 +6,8 @@ import tailwindcss from '@tailwindcss/vite';
 // Site tinh TMK Tech Group, chi tieng Anh (anh 2026-11-24: "viet bang tieng anh la duoc").
 export default defineConfig({
   site: 'https://tmktechgroup.com',
+  // GitHub Pages phat tu nhanh main, thu muc /docs (hook cam tao nhanh gh-pages).
+  outDir: './docs',
   trailingSlash: 'always',
   integrations: [sitemap()],
   vite: {
