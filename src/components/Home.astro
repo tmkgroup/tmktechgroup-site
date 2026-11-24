@@ -40,7 +40,9 @@ const canonical = `${site}/`;
     <title>{c.title}</title>
     <meta name="description" content={c.description} />
     <link rel="canonical" href={canonical} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta property="og:image" content={`${site}/logo-full.png`} />
     <meta property="og:title" content={c.title} />
     <meta property="og:description" content={c.description} />
     <meta property="og:url" content={canonical} />
@@ -55,7 +57,9 @@ const canonical = `${site}/`;
   </head>
   <body>
     <header class="wrap flex items-center justify-between gap-6 py-6">
-      <a href="/" class="text-lg font-semibold no-underline tracking-tight">TMK Tech Group</a>
+      <a href="/" class="flex items-center gap-3 text-lg font-semibold no-underline tracking-tight">
+        <img src="/logo-mark.png" alt="" width="40" height="40" class="logo-mark size-10" />TMK Tech Group
+      </a>
       <nav class="flex items-center gap-5 text-[0.95rem]">
         <a href="#about" class="hidden no-underline hover:underline sm:inline">{c.nav.about}</a>
         <a href="#industries" class="hidden no-underline hover:underline sm:inline">{c.nav.industries}</a>

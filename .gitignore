@@ -9,3 +9,5 @@ dist/
 .claude/
 # cau_truc.md chi giu tren may: repo cong khai, khong lo ten / duong dan ca nhan.
 cau_truc.md
+# design/ = prompt + script gen logo, co cau noi noi bo -> chi giu tren may.
+design/

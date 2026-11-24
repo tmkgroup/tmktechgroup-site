@@ -56,6 +56,13 @@ body {
   border-radius: 2px;
 }
 
+/* Qua cau logo nen navy chim tren nen den: ban toi lot vong trang mong de logo noi. */
+:root[data-theme='dark'] .logo-mark {
+  background: #ffffff;
+  border-radius: 9999px;
+  padding: 2px;
+}
+
 .wrap {
   width: min(72rem, 100% - 3rem);
   margin-inline: auto;
