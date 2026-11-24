@@ -16,7 +16,7 @@ export const industries = [
   { icon: 'map', name: 'Geospatial Technology' },
 ] as const;
 
-export const contactEmail = 'tmktechgroup@gmail.com';
+export const contactEmail = 'contact@tmktechgroup.com';
 export const privacyUrl = 'https://privacy.tmktechgroup.com/';
 
 const en = {
