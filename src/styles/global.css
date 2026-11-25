@@ -15,6 +15,7 @@
   --accent: #1463ff;     /* xanh cong nghe */
   --band-bg: #0a1f4d;
   --band-ink: #ffffff;
+  --slogan: #15803d;     /* xanh la cho slogan: dam de dat tuong phan >= 4.5:1 tren nen trang */
   color-scheme: light;
 }
 :root[data-theme='dark'] {
@@ -25,6 +26,7 @@
   --accent: #5b9bff;
   --band-bg: #0a1f4d;
   --band-ink: #ffffff;
+  --slogan: #4ade80;     /* xanh la sang tren nen den */
   color-scheme: dark;
 }
 
