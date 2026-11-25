@@ -30,6 +30,7 @@ const en = {
     title: 'Technology Without Boundaries.',
     lead: 'Building meaningful digital experiences for people, businesses, and a connected world.',
     sub: 'Driven by innovation, guided by integrity, and focused on a better digital future.',
+    promise: "We're not sure it's the best, but we're sure we'll keep making it better.",
   },
   about: {
     title: 'Brand and direction',

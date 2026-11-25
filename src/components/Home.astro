@@ -60,18 +60,8 @@ const canonical = `${site}/`;
         </h1>
         <p class="measure mt-10 mb-0 text-[clamp(1.2rem,2vw,1.5rem)] leading-snug">{c.hero.lead}</p>
         <p class="measure mt-3 mb-0 text-[var(--muted)]">{c.hero.sub}</p>
+        <p class="measure mt-6 mb-0 italic text-[var(--muted)]">{c.hero.promise}</p>
       </section>
-
-      <div class="band" aria-label={c.industriesSection.title}>
-        <div class="band-track">
-          <ul>
-            {industries.map((i) => <li><img src={ic(i.icon)} alt="" width="32" height="32" class="size-8" />{i.name}</li>)}
-          </ul>
-          <ul aria-hidden="true">
-            {industries.map((i) => <li><img src={ic(i.icon)} alt="" width="32" height="32" class="size-8" />{i.name}</li>)}
-          </ul>
-        </div>
-      </div>
 
       <section id="about" class="wrap grid gap-8 border-b border-[var(--line)] py-20 md:grid-cols-[1fr_2fr]">
         <div>
